@@ -1,4 +1,3 @@
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, TextInput, Button, TouchableOpacity } from "react-native";
 
