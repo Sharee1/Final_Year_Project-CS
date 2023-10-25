@@ -3,9 +3,8 @@ import { Text, View, TextInput, StyleSheet } from 'react-native';
 
 export default function Signup() {
   return (
-    <View style={styles.container}>
-      <TextInput placeholder='Shaheer' />
-
+    <View>
+     
       <Text style={styles.heading}>Getting Started!</Text>
 
       <Text style={styles.subheading}>Create an account to Continue</Text>
@@ -18,7 +17,9 @@ export default function Signup() {
 
       <Text style={styles.label}>Username</Text>
       <TextInput
+
         placeholder="Enter Your Username"
+        
         style={styles.input}
       />
 
@@ -46,14 +47,11 @@ export default function Signup() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    padding: 20,
-  },
+
   heading: {
     fontSize: 40,
     fontWeight: 'bold',
-    marginTop: 120,
+    marginTop: 40,
     marginLeft: 19,
   },
   subheading: {
@@ -83,7 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginTop: 10,
-    alignSelf: 'flex-end',
+    marginLeft:160,
     color: 'grey',
   },
   button: {
