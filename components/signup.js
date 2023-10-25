@@ -1,33 +1,37 @@
-import React from "react";
-import {
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
+import React from 'react';
+import { Text, View, TextInput, StyleSheet,TouchableOpacity } from 'react-native';
 
-export default function Signup({ navigation }) {
+export default function Signup({navigation}) {
   return (
-    <View style={styles.container}>
-      <TextInput placeholder="user" />
-
+    <View>
+     
       <Text style={styles.heading}>Getting Started!</Text>
 
       <Text style={styles.subheading}>Create an account to Continue</Text>
 
       <Text style={styles.label}>Email</Text>
-      <TextInput placeholder="Enter Your Email" style={styles.input} />
+      <TextInput
+        placeholder=" Enter Your Email"
+        style={styles.input}
+      />
 
       <Text style={styles.label}>Username</Text>
-      <TextInput placeholder="Enter Your Username" style={styles.input} />
+      <TextInput 
+
+        placeholder=" Enter Your Username"
+        style={styles.input}
+        
+      />
 
       <Text style={styles.label}>Password</Text>
-      <TextInput placeholder="Enter Your Password" style={styles.input} />
+      <TextInput
+        placeholder=" Enter Your Password "
+        style={styles.input}
+      />
 
-      <Text style={styles.label}>Re-Enter Password</Text>
-      <TextInput placeholder="Enter Your Password" style={styles.input} />
-      <TouchableOpacity onPress={() => navigation.navigate("login")}>
+     
+
+<TouchableOpacity onPress={() => navigation.navigate("login")}>
         <Text style={styles.existingAccountText}>Already have an Account?</Text>
       </TouchableOpacity>
 
@@ -39,34 +43,31 @@ export default function Signup({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    padding: 20,
-  },
+
   heading: {
     fontSize: 40,
-    fontWeight: "bold",
-    marginTop: 90,
+    fontWeight: 'bold',
+    marginTop: 40,
     marginLeft: 19,
   },
   subheading: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: -3,
     marginLeft: 19,
   },
   label: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: 40,
     marginLeft: 20,
-    color: "grey",
+    color: 'grey',
   },
   input: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: 10,
     marginLeft: 20,
-    color: "grey",
+    color: 'grey',
     borderWidth: 1.4,
     borderRadius: 3,
     width: 350,
@@ -74,18 +75,18 @@ const styles = StyleSheet.create({
   },
   existingAccountText: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: 10,
-    alignSelf: "flex-end",
-    color: "grey",
+    marginLeft:160,
+    color: 'grey',
   },
   button: {
     borderWidth: 1.4,
     borderRadius: 3,
     width: 350,
     height: 30,
-    alignSelf: "center",
-    backgroundColor: "yellow",
+    alignSelf: 'center',
+    backgroundColor: 'yellow',
     height: 50,
     width: 150,
     borderRadius: 45,
@@ -94,9 +95,9 @@ const styles = StyleSheet.create({
   },
   signupText: {
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: -55,
-    alignSelf: "center",
-    color: "grey",
+    alignSelf: 'center',
+    color: 'grey',
   },
 });

@@ -14,7 +14,7 @@ const Login = ({ navigation }) => {
       <TextInput style={styles.inputpassword} placeholder="Enter Your Password">
         {" "}
       </TextInput>
-      <Text style={styles.Forgot}>Forgot Password ? </Text>
+      {/* <Text style={styles.Forgot}>Forgot Password ? </Text> */}
       <View style={styles.buttonContainer}>
         <Button title="Login" color="#f5d90a" />
       </View>
