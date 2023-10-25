@@ -43,6 +43,7 @@ const styles ={
     //   },
 
     
+    
     Welcometext :{color:'black',fontSize:40,alignSelf:"flex-start",paddingLeft:20,paddingTop:80,fontWeight:'bold' },
     Signtext:{color:'black',fontSize:30,alignSelf:"flex-start",paddingLeft:20,paddingTop:0,fontWeight:'bold'},
     usernamehead:{color:'grey',fontSize:20,paddingTop:50,paddingLeft:20,fontWeight:'bold'},
