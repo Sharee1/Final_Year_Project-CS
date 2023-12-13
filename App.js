@@ -5,13 +5,14 @@ import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./components/login";
 import Signup from "./components/signup";
-
+import RecipeSearch from "./components/recipeSearch";
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="RecipeSearch" component={RecipeSearch} />
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="signup" component={Signup} />
       </Stack.Navigator>

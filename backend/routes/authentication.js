@@ -4,6 +4,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const User = mongoose.model("User");
 const jwt = require("jsonwebtoken");
+const { emit } = require("nodemon");
 require("dotenv").config();
 
 let jwtSecretKey = process.env.JWT_SECRET_KEY;
@@ -38,5 +39,4 @@ router.post("/signup", (req, res) => {
     }
   });
 });
-
 module.exports = router;
