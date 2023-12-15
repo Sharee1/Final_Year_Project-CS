@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
 
 const HomePage = ({ navigation }) => {
   return (
@@ -10,8 +10,8 @@ const HomePage = ({ navigation }) => {
         {}
         <Button
           title="Search Recipe"
-          onPress={() => navigation.navigate('SearchRecipe')}
-          color="#FFD700" 
+          onPress={() => navigation.navigate("searchrecipe")}
+          color="#FFD700"
         />
       </View>
 
@@ -22,8 +22,8 @@ const HomePage = ({ navigation }) => {
         {}
         <Button
           title="Substitute"
-          onPress={() => navigation.navigate('Substitute')}
-          color="#FFD700" 
+          onPress={() => navigation.navigate("subs")}
+          color="#FFD700"
         />
       </View>
 
@@ -34,8 +34,8 @@ const HomePage = ({ navigation }) => {
         {}
         <Button
           title="Weekly Schedule"
-          onPress={() => navigation.navigate('WeeklySchedule')}
-          color="#FFD700" 
+          onPress={() => navigation.navigate("schedule")}
+          color="#FFD700"
         />
       </View>
 
@@ -46,7 +46,7 @@ const HomePage = ({ navigation }) => {
         {/* Button 4: Scan Your Meal */}
         <Button
           title="Scan Your Meal"
-          onPress={() => navigation.navigate('ScanYourMeal')}
+          onPress={() => navigation.navigate("ScanYourMeal")}
           color="#FFD700" // Yellow color
         />
       </View>
@@ -57,19 +57,19 @@ const HomePage = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 16,
-    backgroundColor: 'White', // Yellow background
+    backgroundColor: "White", // Yellow background
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 140,
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     marginBottom: 10, // Added marginBottom for spacing
   },
   buttonSpacer: {

@@ -16,7 +16,11 @@ const Login = ({ navigation }) => {
       </TextInput>
       {/* <Text style={styles.Forgot}>Forgot Password ? </Text> */}
       <View style={styles.buttonContainer}>
-        <Button title="Login" color="#f5d90a" />
+        <Button
+          title="Login"
+          color="#f5d90a"
+          onPress={() => navigation.navigate("default")}
+        />
       </View>
       <TouchableOpacity
         onPress={() => navigation.navigate("signup")}
