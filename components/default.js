@@ -46,7 +46,7 @@ const HomePage = ({ navigation }) => {
         {/* Button 4: Scan Your Meal */}
         <Button
           title="Scan Your Meal"
-          onPress={() => navigation.navigate("ScanYourMeal")}
+          onPress={() => navigation.navigate("scanner")}
           color="#FFD700" // Yellow color
         />
       </View>
