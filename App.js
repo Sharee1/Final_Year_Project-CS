@@ -10,6 +10,8 @@ import SearchRecipe from "./components/searchrecipe";
 import Subs from "./components/subs";
 import Schedule from "./components/schedule";
 import Scanner from "./components/scanner";
+import DishDetails from "./components/dishDetails";
+
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -23,6 +25,7 @@ export default function App() {
         <Stack.Screen name="subs" component={Subs} />
         <Stack.Screen name="schedule" component={Schedule} />
         <Stack.Screen name="scanner" component={Scanner} />
+        <Stack.Screen name="DishDetails" component={DishDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

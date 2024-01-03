@@ -1,52 +1,111 @@
+// SearchRecipe.js
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  TextInput,
+  Alert,
+} from "react-native";
 
-const SearchRecipe = ({ navigation }) => {
+export default function SearchRecipe({ navigation }) {
   const [searchText, setSearchText] = useState("");
+  const [showDetails, setShowDetails] = useState(false);
+  const [foundDish, setFoundDish] = useState(null);
+
+  const dishes = [
+    {
+      id: 1,
+      name: "Pasta",
+      description: "Delicious pasta dish",
+      ingredients: "Pasta, sauce, cheese",
+    },
+    // Add more dishes as needed
+  ];
+
+  const navigateToDetails = (dish) => {
+    navigation.navigate("DishDetails", dish);
+  };
 
   const handleSearch = () => {
-    console.log("Searching for recipes with name: ${searchText}");
+    const searchedDish = dishes.find(
+      (dish) => dish.name.toLowerCase() === searchText.toLowerCase()
+    );
+
+    if (searchedDish) {
+      navigateToDetails(searchedDish);
+      setShowDetails(true);
+      setFoundDish(searchedDish);
+    } else {
+      // Handle case when dish is not found
+      setShowDetails(false);
+      setFoundDish(null);
+      Alert.alert(
+        "Dish Not Found",
+        "Sorry, the dish you searched for is not in our database."
+      );
+    }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Search Recipe</Text>
-
       <TextInput
-        style={styles.input}
-        placeholder="Enter recipe name here"
-        value={searchText}
+        style={styles.searchBar}
+        placeholder="Search for a dish..."
         onChangeText={(text) => setSearchText(text)}
+        value={searchText}
       />
 
-      <Button title="Search" onPress={handleSearch} />
+      {!showDetails ? (
+        <TouchableOpacity style={styles.button} onPress={handleSearch}>
+          <Text style={styles.buttonText}>Search</Text>
+        </TouchableOpacity>
+      ) : null}
 
-      {/* Add your search results or other content here */}
+      {showDetails ? (
+        <View>
+          {dishes.map((dish) => (
+            <TouchableOpacity
+              key={dish.id}
+              onPress={() => navigateToDetails(dish)}
+            >
+              <Text style={styles.dishItem}>{dish.name}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      ) : null}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     padding: 16,
-    backgroundColor: "#FFF",
   },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
-  input: {
+  searchBar: {
     height: 40,
-    width: "100%",
     borderColor: "gray",
     borderWidth: 1,
-    marginBottom: 10,
-    paddingHorizontal: 10,
+    marginBottom: 16,
+    paddingLeft: 8,
+  },
+  button: {
+    backgroundColor: "blue",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    margin: 16,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    textAlign: "center",
+  },
+  dishItem: {
+    fontSize: 18,
+    marginBottom: 8,
+    color: "blue",
   },
 });
-
-export default SearchRecipe;
